@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>;
+}
+
+const {
+  title,
+  description,
+  // TODO: crear /public/og-default.jpg en Fase 1
+  ogImage = "/og-default.jpg",
+  noindex = false,
+  jsonLd,
+} = Astro.props;
+
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).toString()
+  : Astro.url.href;
+const ogImageUrl = Astro.site
+  ? new URL(ogImage, Astro.site).toString()
+  : ogImage;
+
+const siteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Florist",
+  name: "Floristería en Medellín",
+  description:
+    "Floristería en Medellín con envíos en el Valle de Aburrá y a nivel nacional.",
+  areaServed: ["Valle de Aburrá", "Colombia"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Medellín",
+    addressCountry: "CO",
+  },
+  // TODO: completar teléfono real
+  // telephone: "+57 ...",
+  priceRange: "$$",
+  currenciesAccepted: "COP",
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Floristería en Medellín" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#7b323b" />
+    {/* TODO: crear /public/favicon.svg en Fase 1 */}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {/* Tipografía oficial: Crimson Pro (títulos) + IBM Plex Sans (texto). TODO Fase 1: evaluar auto-hospedar para rendimiento */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(jsonLd ?? siteJsonLd)}
+    />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen bg-background text-burgundy antialiased">
+    <slot />
+  </body>
+</html>
