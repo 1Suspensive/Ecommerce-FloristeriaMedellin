@@ -37,7 +37,8 @@ Estas rutas aparecen en header/footer/tarjetas y hoy devuelven 404:
 - [ ] `/ramos`, `/flores`, `/eventos`, `/regalos` (Fase 2)
 - [ ] `/producto/<slug>` fichas de producto (Fase 2)
 - [ ] `/carrito` (Fase 3)
-- [ ] `/contacto`, `/envios`, `/preguntas-frecuentes`, `/terminos`, `/privacidad`
+- [x] `/contacto`
+- [ ] `/envios`, `/preguntas-frecuentes`, `/terminos`, `/privacidad`
 
 ## Verificación pendiente de la Fase 1
 

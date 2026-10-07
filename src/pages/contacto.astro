@@ -1,0 +1,243 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Contacto | Floristería en Medellín"
+  description="Contáctanos por WhatsApp, visítanos en Medellín o escríbenos por correo. Horarios, dirección y entregas el mismo día en el Valle de Aburrá."
+>
+  <main id="contenido">
+    {/* Hero: centrado con motivo floral de marca (mismo de la 404) y accesos
+        directos. Patrón Feature-Rich Showcase de la skill ui-ux-pro-max:
+        hero con propuesta de valor + rejilla de canales + CTA final. */}
+    <section aria-labelledby="contacto-titulo" class="border-b border-beige/50 bg-white/60">
+      <div class="mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 lg:py-16">
+        <nav aria-label="Miga de pan">
+          <ol class="flex items-center justify-center gap-2 text-sm text-burgundy/70">
+            <li>
+              <a href="/" class="underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">
+                Inicio
+              </a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="font-medium text-burgundy">Contacto</li>
+          </ol>
+        </nav>
+
+        <svg viewBox="0 0 100 100" class="mx-auto mt-8 h-12 w-12" aria-hidden="true" focusable="false">
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(60 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990" transform="rotate(120 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(180 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990" transform="rotate(240 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(300 50 50)"></ellipse>
+          <circle cx="50" cy="50" r="12" fill="#f6a908"></circle>
+          <circle cx="50" cy="50" r="6" fill="#8b0915"></circle>
+        </svg>
+
+        <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-wine">Contacto</p>
+        <h1 id="contacto-titulo" class="mt-3 font-display text-4xl font-semibold leading-tight text-burgundy sm:text-5xl">
+          Estamos para ayudarte
+        </h1>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-burgundy/80">
+          Escríbenos por WhatsApp para pedidos y asesoría, visítanos en nuestra
+          tienda en Medellín o envíanos un correo.
+        </p>
+
+        {/* Accesos directos solo con icono (a color): cada botón lleva
+            aria-label + title porque no hay texto visible. */}
+        <div class="mt-8 flex items-center justify-center gap-4">
+          <a
+            href="https://wa.me/573005267555"
+            data-wa-cta
+            aria-label="Escríbenos por WhatsApp"
+            title="WhatsApp"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-olive text-white shadow-md transition-[transform,background-color,box-shadow] duration-200 hover:bg-burgundy hover:shadow-lg motion-safe:hover:-translate-y-0.5 motion-safe:hover:scale-105"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .6-.2 1.3Z" />
+            </svg>
+          </a>
+          <a
+            href="mailto:hola@tufloristeria.co"
+            aria-label="Escríbenos por correo"
+            title="Correo"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-red-dark text-white shadow-md transition-[transform,background-color,box-shadow] duration-200 hover:bg-wine hover:shadow-lg motion-safe:hover:-translate-y-0.5 motion-safe:hover:scale-105"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3.5 7 8.5 6 8.5-6" />
+            </svg>
+          </a>
+          <a
+            href="#horario"
+            aria-label="Ver horario de atención"
+            title="Horario"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-gold text-neutral-800 shadow-md transition-[transform,background-color,box-shadow,color] duration-200 hover:bg-burgundy hover:text-white hover:shadow-lg motion-safe:hover:-translate-y-0.5 motion-safe:hover:scale-105"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M12 7.5V12l3 2" />
+            </svg>
+          </a>
+          <a
+            href="#entregas"
+            aria-label="Ver información de entregas"
+            title="Entregas"
+            class="flex h-14 w-14 items-center justify-center rounded-full bg-wine text-white shadow-md transition-[transform,background-color,box-shadow] duration-200 hover:bg-burgundy hover:shadow-lg motion-safe:hover:-translate-y-0.5 motion-safe:hover:scale-105"
+          >
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M1.5 8a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v8.5h-13V8Z" />
+              <path d="M14.5 10.5h4l3 3v3h-7" />
+              <circle cx="6" cy="18.5" r="1.8" />
+              <circle cx="17.5" cy="18.5" r="1.8" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Canales de contacto" class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
+      <div class="grid gap-6 md:grid-cols-3">
+        {/* Canal principal: insignia dorada (destacado) + CTA sólido oliva.
+            El hover es solo transform/sombra, coherente con las tarjetas del catálogo. */}
+        <article id="canal-whatsapp" class="relative flex flex-col rounded-2xl border border-beige/50 bg-white p-8 shadow-sm motion-safe:transition-[transform,box-shadow] motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md">
+          <span class="absolute right-6 top-6 inline-block rounded-full bg-gold px-3 py-1 text-xs font-semibold uppercase tracking-widest text-neutral-800">
+            Más rápido
+          </span>
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-olive text-white">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .6-.2 1.3Z" />
+            </svg>
+          </span>
+          <h2 class="mt-4 font-display text-2xl font-semibold text-burgundy">WhatsApp</h2>
+          <p class="mt-2 text-lg font-semibold text-wine">
+            <a href="https://wa.me/573005267555" class="underline-offset-4 transition-colors duration-200 hover:underline">
+              +57 300 526 7555
+            </a>
+          </p>
+          <p class="mt-2 flex-1 leading-relaxed text-burgundy/80">
+            La vía más rápida para pedir, hacer seguimiento a tu entrega o recibir
+            asesoría de nuestros floristas.
+          </p>
+          <a
+            href="https://wa.me/573005267555"
+            data-wa-cta
+            class="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-olive px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-burgundy"
+          >
+            Escríbenos por WhatsApp
+          </a>
+        </article>
+
+        <article id="canal-tienda" class="flex flex-col rounded-2xl border border-beige/50 bg-white p-8 shadow-sm motion-safe:transition-[transform,box-shadow] motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-mint/40 text-olive">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11Z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+          </span>
+          <h2 class="mt-4 font-display text-2xl font-semibold text-burgundy">Nuestra tienda</h2>
+          <address class="mt-2 text-lg font-semibold not-italic text-wine">
+            Cra. 39 #49-24, segundo piso
+          </address>
+          <p class="mt-2 flex-1 leading-relaxed text-burgundy/80">
+            Medellín, Colombia. Recogemos pedidos en tienda y despachamos a
+            domicilio en Medellín, el Valle de Aburrá y a nivel nacional.
+          </p>
+        </article>
+
+        <article id="canal-correo" class="flex flex-col rounded-2xl border border-beige/50 bg-white p-8 shadow-sm motion-safe:transition-[transform,box-shadow] motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md">
+          <span class="flex h-12 w-12 items-center justify-center rounded-full bg-mint/40 text-olive">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="m3.5 7 8.5 6 8.5-6" />
+            </svg>
+          </span>
+          <h2 class="mt-4 font-display text-2xl font-semibold text-burgundy">Correo</h2>
+          <p class="mt-2 text-lg font-semibold text-wine">
+            <a href="mailto:hola@tufloristeria.co" class="underline-offset-4 transition-colors duration-200 hover:underline">
+              hola@tufloristeria.co
+            </a>
+          </p>
+          <p class="mt-2 flex-1 leading-relaxed text-burgundy/80">
+            Para cotizaciones de eventos, pedidos corporativos y solicitudes
+            especiales. Respondemos en horario de tienda.
+          </p>
+        </article>
+      </div>
+
+      <div class="mt-6 grid gap-6 md:grid-cols-2">
+        <article id="horario" class="scroll-mt-24 rounded-2xl border border-beige/50 bg-white p-8 shadow-sm motion-safe:transition-[transform,box-shadow] motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md">
+          <div class="flex items-center gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mint/40 text-olive">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="8.5" />
+                <path d="M12 7.5V12l3 2" />
+              </svg>
+            </span>
+            <h2 class="font-display text-2xl font-semibold text-burgundy">Horario de atención</h2>
+          </div>
+          <ul class="mt-6 divide-y divide-beige/40 text-base">
+            <li class="flex items-center justify-between gap-4 py-3">
+              <span class="font-medium text-burgundy">Lunes a viernes</span>
+              <span class="text-burgundy/80">8:00 a. m. – 7:00 p. m.</span>
+            </li>
+            <li class="flex items-center justify-between gap-4 py-3">
+              <span class="font-medium text-burgundy">Sábados y domingos</span>
+              <span class="text-burgundy/80">9:00 a. m. – 2:00 p. m.</span>
+            </li>
+          </ul>
+        </article>
+
+        <article id="entregas" class="scroll-mt-24 rounded-2xl border border-beige/50 bg-white p-8 shadow-sm motion-safe:transition-[transform,box-shadow] motion-safe:duration-200 motion-safe:hover:-translate-y-1 motion-safe:hover:shadow-md">
+          <div class="flex items-center gap-4">
+            <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mint/40 text-olive">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M1.5 8a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v8.5h-13V8Z" />
+                <path d="M14.5 10.5h4l3 3v3h-7" />
+                <circle cx="6" cy="18.5" r="1.8" />
+                <circle cx="17.5" cy="18.5" r="1.8" />
+              </svg>
+            </span>
+            <h2 class="font-display text-2xl font-semibold text-burgundy">Entregas</h2>
+          </div>
+          <ul class="mt-6 space-y-3 leading-relaxed text-burgundy/80">
+            <li>
+              <strong class="font-semibold text-burgundy">Mismo día:</strong> pide antes de las
+              3:00 p. m. y entregamos hoy en Medellín y el Valle de Aburrá.
+            </li>
+            <li>
+              <strong class="font-semibold text-burgundy">Cobertura:</strong> Medellín, Valle de
+              Aburrá y envíos a nivel nacional.
+            </li>
+            <li>
+              <strong class="font-semibold text-burgundy">Eventos:</strong> cotiza decoración para
+              bodas y eventos corporativos por WhatsApp o correo.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="focus-invert bg-wine">
+      <div class="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
+        <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
+          ¿Prefieres hablar con un florista?
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white">
+          Cuéntanos la ocasión y te recomendamos el arreglo ideal con entrega hoy mismo.
+        </p>
+        <a
+          href="https://wa.me/573005267555"
+          data-wa-cta
+          class="mt-8 inline-flex min-h-11 items-center gap-2 rounded-md bg-olive px-8 py-3 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-background hover:text-olive"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .6-.2 1.3Z" />
+          </svg>
+          Hablar por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
