@@ -1,0 +1,55 @@
+---
+import type { Product } from "../lib/catalog";
+import { formatCop } from "../lib/format";
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const href = `/producto/${product.slug}`;
+---
+
+<article class="group relative flex h-full flex-col rounded-xl border border-beige/50 bg-white shadow-sm transition duration-300 ease-out hover:z-20 hover:scale-[1.04] hover:shadow-xl focus-within:z-20 focus-within:scale-[1.04] focus-within:shadow-xl motion-reduce:transform-none motion-reduce:transition-none">
+  <a href={href} class="relative block overflow-hidden rounded-t-xl">
+    <img
+      src={product.image}
+      alt={`Fotografía de ${product.name}`}
+      width="800"
+      height="600"
+      loading="lazy"
+      decoding="async"
+      class="aspect-[4/3] w-full object-cover"
+    />
+    {
+      product.badge && (
+        <span
+          class:list={[
+            "absolute left-3 top-3 rounded-full px-3 py-1 text-xs font-semibold",
+            product.badge.tone === "offer" ? "bg-gold text-neutral-800" : "bg-wine text-white",
+          ]}
+        >
+          {product.badge.label}
+        </span>
+      )
+    }
+  </a>
+  <div class="flex flex-1 flex-col p-4">
+    <h3 class="font-display text-xl font-semibold text-burgundy">
+      <a href={href} class="transition-colors duration-200 hover:text-red-dark">{product.name}</a>
+    </h3>
+    {/* min-h de 3 líneas reservado siempre: al soltar el recorte en hover, el texto ocupa espacio ya existente y nada se desplaza */}
+    <p class="mt-1 line-clamp-2 min-h-[3lh] flex-1 text-sm leading-relaxed text-burgundy/80 group-hover:line-clamp-3 group-focus-within:line-clamp-3">
+      {product.description}
+    </p>
+    <div class="mt-4 flex items-center justify-between">
+      <p class="text-lg font-semibold text-wine">{formatCop(product.priceCop)}</p>
+      <a
+        href={href}
+        class="inline-flex min-h-11 items-center rounded-md px-3 py-2 text-sm font-medium text-red-dark transition duration-300 ease-out hover:bg-red-dark hover:text-white group-hover:bg-red-dark group-hover:text-white group-hover:shadow-md group-focus-within:bg-red-dark group-focus-within:text-white motion-reduce:transition-none"
+      >
+        Ver detalles
+      </a>
+    </div>
+  </div>
+</article>

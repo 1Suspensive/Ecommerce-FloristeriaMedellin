@@ -4,8 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  // TODO: reemplazar por el dominio real de la floristería
-  site: "https://www.tufloristeria.co",
+  site: "https://www.floristeria-medellin.com",
   output: "static",
   adapter: node({ mode: "standalone" }),
   integrations: [sitemap()],

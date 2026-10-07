@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import WhatsAppFloat from "../components/WhatsAppFloat.astro";
 
 interface Props {
   title: string;
@@ -31,14 +34,29 @@ const siteJsonLd = {
   name: "Floristería en Medellín",
   description:
     "Floristería en Medellín con envíos en el Valle de Aburrá y a nivel nacional.",
+  url: Astro.site?.toString(),
   areaServed: ["Valle de Aburrá", "Colombia"],
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Cra. 39 #49-24, segundo piso",
     addressLocality: "Medellín",
     addressCountry: "CO",
   },
-  // TODO: completar teléfono real
-  // telephone: "+57 ...",
+  telephone: "+573005267555",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "19:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Saturday", "Sunday"],
+      opens: "09:00",
+      closes: "14:00",
+    },
+  ],
   priceRange: "$$",
   currenciesAccepted: "COP",
 };
@@ -80,7 +98,18 @@ const siteJsonLd = {
     />
     <slot name="head" />
   </head>
-  <body class="min-h-screen bg-background text-burgundy antialiased">
-    <slot />
+  <body class="flex min-h-screen flex-col bg-background text-burgundy antialiased">
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-burgundy focus:px-4 focus:py-2 focus:text-white"
+    >
+      Saltar al contenido principal
+    </a>
+    <Header />
+    <div class="flex-1">
+      <slot />
+    </div>
+    <Footer />
+    <WhatsAppFloat />
   </body>
 </html>

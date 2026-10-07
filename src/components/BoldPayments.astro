@@ -1,0 +1,48 @@
+---
+// Widget oficial de Bold con los métodos de pago disponibles (doc: https://developers.bold.co/graphic-resources).
+// - layout=vertical: logo de Bold sobre los métodos de pago (ancho máx. 230px).
+// - theme=dark: versión para fondos oscuros (el footer es borgoña).
+// - type=static (por defecto): imagen sin animación, más liviana que el carrusel.
+// - El script no es bloqueante (se ejecuta en el evento load) y se mantiene
+//   actualizado solo: si Bold añade o quita métodos, el widget cambia sin tocar código.
+// - El <noscript> conserva la información para usuarios sin JS y para SEO.
+---
+
+<div id="bold-pagos" aria-label="Medios de pago disponibles" class="min-h-[120px] w-full max-w-[230px]">
+  <noscript>
+    <p class="text-sm leading-relaxed text-background/80">
+      Aceptamos tarjetas Visa, Mastercard y American Express, PSE, Nequi, Daviplata y Botón
+      Bancolombia a través de Bold.
+    </p>
+  </noscript>
+</div>
+<script
+  is:inline
+  src="https://bold.co/library/ui-kit.js?layout=vertical&theme=dark&target=bold-pagos"
+></script>
+
+<style is:global>
+  /* El ui-kit de Bold inyecta sus estilos con !important sobre #bold-ui-kit-N:
+     centra el logo y, al haber más de 8 medios de pago, encoge la grilla a 160px
+     con íconos de 26px (por eso quedaba desalineado del texto de la columna).
+     Estos ajustes ganan la especificidad vía #bold-pagos (también con !important)
+     para alinear todo al borde izquierdo y agrandar logo (85→100px) e íconos (26→30px). */
+  #bold-pagos [id^="bold-ui-kit-"] .bold-logo {
+    justify-content: flex-start !important;
+  }
+
+  #bold-pagos [id^="bold-ui-kit-"] .bold-logo img {
+    width: 100px !important;
+  }
+
+  #bold-pagos [id^="bold-ui-kit-"] .bold-payment-methods--static {
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+    max-width: 100% !important;
+    gap: 6px !important;
+  }
+
+  #bold-pagos [id^="bold-ui-kit-"] .bold-payment-methods--static img {
+    width: 30px !important;
+  }
+</style>

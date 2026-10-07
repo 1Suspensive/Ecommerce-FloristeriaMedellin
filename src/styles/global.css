@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+@source "..";
 
 @theme {
   --font-display: "Crimson Pro", Georgia, "Times New Roman", serif;
@@ -35,4 +36,85 @@ h3 {
 :focus-visible {
   outline: 2px solid var(--color-red-dark);
   outline-offset: 2px;
+}
+
+/* Sobre fondos oscuros (footer, CTA) el outline rojo oscuro no se ve: usar blanco */
+footer :focus-visible,
+.focus-invert :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Carrusel de testimonios: desplazamiento lento solo con transform (compositor), sin JS */
+@keyframes marquee-x {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.marquee-track {
+  animation: marquee-x 90s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Rotador de textos de la barra de anuncios (fade suave, escalonado con delay por ítem) */
+@keyframes announcement-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  3% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  22% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+.announcement-item {
+  animation: announcement-fade 20s infinite;
+}
+
+.announcement:hover .announcement-item,
+.announcement:focus-within .announcement-item {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .marquee-track {
+    animation: none;
+    will-change: auto;
+  }
+  .announcement-item {
+    animation: none;
+    opacity: 0;
+  }
+  .announcement-item:first-child {
+    opacity: 1;
+  }
 }

@@ -1,12 +1,219 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CategoryCard from "../components/CategoryCard.astro";
+import ProductCard from "../components/ProductCard.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import { categories, featuredProducts, testimonials } from "../lib/catalog";
+import { activePromotion } from "../lib/promotions";
 ---
 
 <BaseLayout
-  title="Floristería en Medellín | Hola Mundo"
-  description="Página inicial de verificación del e-commerce de la floristería en Medellín."
+  title="Floristería en Medellín | Ramos, flores y regalos a domicilio"
+  description="Flores frescas con entrega a domicilio en Medellín y el Valle de Aburrá. Ramos, flores, anchetas y decoración floral para eventos. Pide hoy antes de las 3:00 p. m."
 >
-  <main class="flex min-h-screen items-center justify-center">
-    <h1 class="font-display text-4xl font-semibold">Hola Mundo</h1>
+  <main id="contenido">
+    {/* Hero: la imagen principal no se anima (LCP, PLAN.md Fase 1) */}
+    <section class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:py-20">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-widest text-wine">Floristería en Medellín</p>
+        <h1 class="mt-3 font-display text-4xl font-semibold leading-tight text-burgundy sm:text-5xl lg:text-6xl">
+          Flores frescas que dicen lo que tú sientes
+        </h1>
+        <p class="mt-4 max-w-lg text-lg leading-relaxed text-burgundy/80">
+          Ramos, flores y detalles elaborados el mismo día por floristas locales. Entregamos en Medellín y el Valle de Aburrá.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/ramos"
+            class="inline-flex min-h-11 items-center rounded-md bg-red-dark px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-wine"
+          >
+            Ver catálogo
+          </a>
+          <a
+            href="https://wa.me/573005267555"
+            data-wa-cta
+            class="inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-olive px-6 py-3 text-base font-semibold text-olive transition-colors duration-200 hover:bg-olive hover:text-white"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .6-.2 1.3Z" />
+            </svg>
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+      <div>
+        <img
+          src="/img/hero.svg"
+          alt="Ramo de flores frescas en tonos coral, rosa y dorado"
+          width="1200"
+          height="900"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          class="h-auto w-full rounded-2xl border border-beige/50 shadow-md"
+        />
+      </div>
+    </section>
+
+    {/* Confianza */}
+    <section aria-label="Por qué comprar con nosotros" class="border-y border-beige/50 bg-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:grid-cols-3 sm:px-6">
+        <div class="flex items-start gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mint/40 text-olive">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M1.5 8a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v8.5h-13V8Z" />
+              <path d="M14.5 10.5h4l3 3v3h-7" />
+              <circle cx="6" cy="18.5" r="1.8" />
+              <circle cx="17.5" cy="18.5" r="1.8" />
+            </svg>
+          </span>
+          <div>
+            <h2 class="font-display text-lg font-semibold text-burgundy">Envíos el mismo día</h2>
+            <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+              Pide antes de las 3:00 p. m. y entregamos hoy en Medellín y el Valle de Aburrá.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mint/40 text-olive">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2.5 4 5.5v6c0 5 3.4 8.3 8 10 4.6-1.7 8-5 8-10v-6l-8-3Z" />
+              <path d="m8.8 11.8 2.3 2.3 4.2-4.2" />
+            </svg>
+          </span>
+          <div>
+            <h2 class="font-display text-lg font-semibold text-burgundy">Pago 100 % seguro</h2>
+            <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+              Procesamos tus pagos con Bold. Nunca almacenamos datos de tu tarjeta.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-mint/40 text-olive">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 21.5c-4.5-2.3-7.5-6-7.5-10A7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 7.5 7.5c0 4-3 7.7-7.5 10Z" />
+              <path d="M12 4v17.5" />
+            </svg>
+          </span>
+          <div>
+            <h2 class="font-display text-lg font-semibold text-burgundy">Frescura garantizada</h2>
+            <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+              Flores cortadas el mismo día. Si algo llega mal, lo reponemos sin costo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Promoción de fecha especial (datos en src/lib/promotions.ts; Fase 4: editable desde el admin).
+        Va inmediatamente después de la confianza: la campaña de temporada es prioridad comercial
+        y caduca, el catálogo es permanente. */}
+    {
+      activePromotion && (
+        <section aria-labelledby="promo-title" class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+          <div class="grid items-stretch gap-0 overflow-hidden rounded-2xl border border-beige/50 bg-white shadow-sm lg:grid-cols-2">
+            <div class="p-8 lg:p-12">
+              <span class="inline-block rounded-full bg-gold px-4 py-1 text-xs font-semibold uppercase tracking-widest text-neutral-800">
+                {activePromotion.occasion}
+              </span>
+              <h2 id="promo-title" class="mt-4 font-display text-3xl font-semibold text-burgundy sm:text-4xl">
+                {activePromotion.title}
+              </h2>
+              <p class="mt-2 text-base font-semibold text-wine">{activePromotion.dateLabel}</p>
+              <p class="mt-3 leading-relaxed text-burgundy/80">{activePromotion.description}</p>
+              <a
+                href={activePromotion.ctaHref}
+                class="mt-6 inline-flex min-h-11 items-center rounded-md bg-red-dark px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-wine"
+              >
+                {activePromotion.ctaLabel}
+              </a>
+            </div>
+            <img
+              src={activePromotion.image}
+              alt={activePromotion.imageAlt}
+              width="1000"
+              height="800"
+              loading="lazy"
+              decoding="async"
+              class="order-first h-full w-full object-cover lg:order-last"
+            />
+          </div>
+        </section>
+      )
+    }
+
+    {/* Categorías */}
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <SectionHeading
+        eyebrow="Catálogo"
+        title="Encuentra el detalle perfecto"
+        description="Desde un ramo espontáneo hasta la decoración de tu evento más importante."
+      />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {categories.map((category) => <CategoryCard category={category} />)}
+      </div>
+    </section>
+
+    {/* Destacados */}
+    <section class="bg-white">
+      <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <SectionHeading
+          eyebrow="Favoritos"
+          title="Los más pedidos de la semana"
+          description="Arreglos frescos, listos para sorprender hoy mismo."
+        />
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {featuredProducts.map((product) => <ProductCard product={product} />)}
+        </div>
+      </div>
+    </section>
+
+    {/* Testimonios */}
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <SectionHeading
+        eyebrow="Testimonios"
+        title="Lo que dicen nuestros clientes"
+      />
+      {/* Carrusel lento con CSS puro (translateX en el compositor, sin JS).
+          La segunda copia es aria-hidden: existe solo para el loop visual infinito.
+          Se pausa al pasar el cursor o enfocar, y se desactiva con prefers-reduced-motion. */}
+      <div class="marquee mt-10">
+        <ul class="marquee-track flex w-max gap-6" aria-label="Opiniones de clientes">
+          {testimonials.map((testimonial) => (
+            <li class="w-[19rem] shrink-0 sm:w-80">
+              <TestimonialCard testimonial={testimonial} />
+            </li>
+          ))}
+          {testimonials.map((testimonial) => (
+            <li class="w-[19rem] shrink-0 sm:w-80" aria-hidden="true">
+              <TestimonialCard testimonial={testimonial} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    {/* CTA final */}
+    <section class="focus-invert bg-wine">
+      <div class="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
+        <h2 class="font-display text-3xl font-semibold text-white sm:text-4xl">
+          ¿Tienes una ocasión especial esta semana?
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-white">
+          Cuéntanos qué quieres celebrar y te ayudamos a elegir el arreglo ideal.
+        </p>
+        <a
+          href="https://wa.me/573005267555"
+          data-wa-cta
+          class="mt-8 inline-flex min-h-11 items-center gap-2 rounded-md bg-olive px-8 py-3 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-background hover:text-olive"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-2.9-1.3-4.8-4.2-5-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.8 1.7.3.2.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.4 0 .1 0 .6-.2 1.3Z" />
+          </svg>
+          Pedir asesoría por WhatsApp
+        </a>
+      </div>
+    </section>
   </main>
 </BaseLayout>

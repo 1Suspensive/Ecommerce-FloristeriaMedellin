@@ -1,0 +1,24 @@
+---
+// Textos rotativos de la barra superior: todos quedan en el HTML (SEO) y rotan con CSS puro.
+const messages = [
+  "Envíos el mismo día en Medellín · Pedidos antes de las 3:00 p. m.",
+  "Flores frescas a domicilio en Medellín y el Valle de Aburrá",
+  "Ramos, flores y anchetas con tarjeta de mensaje personalizada",
+  "Paga fácil y seguro: tarjetas, PSE, Nequi y billeteras",
+];
+---
+
+<div class="announcement bg-burgundy text-background">
+  <div class="relative mx-auto h-9 max-w-7xl px-4 sm:px-6">
+    {
+      messages.map((message, i) => (
+        <p
+          class="announcement-item absolute inset-0 truncate px-4 text-center text-xs font-medium leading-9 tracking-wide opacity-0 sm:text-sm"
+          style={`animation-delay: ${i * 5}s`}
+        >
+          {message}
+        </p>
+      ))
+    }
+  </div>
+</div>
