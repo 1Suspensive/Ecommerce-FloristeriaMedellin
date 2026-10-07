@@ -111,7 +111,7 @@ Documentación oficial: `https://developers.bold.co`. Léela antes de implementa
 
 ## Paleta de colores
 
-- La paleta oficial vive en `.commandcode/context/colors.md`. Léela antes de cualquier elección de color en componentes, páginas o estilos, y usa sus variables CSS como fuente única.
+- La paleta oficial vive en `docs/colors.md`. Léela antes de cualquier elección de color en componentes, páginas o estilos, y usa sus variables CSS como fuente única.
 - No introduzcas colores nuevos sin una razón de diseño clara.
 - La paleta del proyecto prevalece sobre cualquier paleta generada por skills externas.
 

@@ -36,5 +36,5 @@ coverage/
 *.tgz
 .cache/
 
-# Command Code (solo ajustes locales)
-.commandcode/settings.local.json
+# Command Code (herramientas locales del asistente; no se versionan ni se despliegan)
+.commandcode/
