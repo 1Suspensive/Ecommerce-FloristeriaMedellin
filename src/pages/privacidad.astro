@@ -1,0 +1,705 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Política de privacidad | Floristería en Medellín"
+  description="Cómo recopilamos, usamos y protegemos tus datos personales en Floristería Medellín: pedidos como invitado, pagos con Bold, cookies y tus derechos según la Ley 1581 de 2012."
+>
+  <main id="contenido">
+    {/* Hero: mismo patrón de contacto.astro + motivo floral de marca y
+        distintivos de vigencia y base legal. Mejora visual guiada por la
+        skill ui-ux-pro-max (patrón FAQ/Documentation, estilo minimalista):
+        jerarquía clara, tarjetas y navegación lateral fija. */}
+    <section aria-labelledby="privacidad-titulo" class="relative overflow-hidden border-b border-beige/50 bg-white/60">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+        <div class="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-pink/15 blur-3xl"></div>
+        <div class="absolute -right-24 top-10 h-72 w-72 rounded-full bg-mint/25 blur-3xl"></div>
+      </div>
+      <div class="relative mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 lg:py-16">
+        <nav aria-label="Miga de pan">
+          <ol class="flex items-center justify-center gap-2 text-sm text-burgundy/70">
+            <li>
+              <a href="/" class="underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">
+                Inicio
+              </a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="font-medium text-burgundy">Política de privacidad</li>
+          </ol>
+        </nav>
+
+        <svg viewBox="0 0 100 100" class="mx-auto mt-8 h-12 w-12" aria-hidden="true" focusable="false">
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(60 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990" transform="rotate(120 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(180 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990" transform="rotate(240 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(300 50 50)"></ellipse>
+          <circle cx="50" cy="50" r="12" fill="#f6a908"></circle>
+          <circle cx="50" cy="50" r="6" fill="#8b0915"></circle>
+        </svg>
+
+        <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-wine">Legal</p>
+        <h1 id="privacidad-titulo" class="mt-3 font-display text-4xl font-semibold leading-tight text-burgundy sm:text-5xl">
+          Política de privacidad
+        </h1>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-burgundy/80">
+          Qué datos recopilamos cuando compras en nuestro sitio, cómo los usamos,
+          cómo los protegemos y cómo ejercer tus derechos.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <p class="inline-block rounded-full bg-mint/40 px-4 py-1 text-sm font-semibold text-olive">
+            Vigente desde el 9 de octubre de 2026
+          </p>
+          <p class="inline-block rounded-full bg-gold px-4 py-1 text-sm font-semibold text-neutral-800">
+            Ley 1581 de 2012
+          </p>
+          <button
+            id="print-policy"
+            type="button"
+            class="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-burgundy/20 px-4 py-1 text-sm font-semibold text-burgundy transition-colors duration-200 hover:border-burgundy/40 hover:bg-white print:hidden"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 9V3h12v6" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect x="6" y="14" width="12" height="7" />
+            </svg>
+            Imprimir
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+      <div class="grid gap-10 lg:grid-cols-[17.5rem_minmax(0,1fr)]">
+        {/* Índice lateral fijo en escritorio, tarjeta superior en móvil */}
+        <aside class="self-start space-y-6 lg:sticky lg:top-24">
+          <nav aria-label="Índice de la política" class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm sm:p-6">
+            <h2 class="font-display text-xl font-semibold text-burgundy">Contenido</h2>
+            <p class="mt-1 text-sm text-burgundy/70">Documento completo en 8 secciones.</p>
+            <ol class="mt-4 grid gap-1 sm:grid-cols-2 lg:grid-cols-1">
+              <li>
+                <a data-toc-link href="#introduccion" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">1</span>
+                  Introducción y responsable
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#datos" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">2</span>
+                  Datos que recopilamos
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#finalidades" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">3</span>
+                  Para qué usamos sus datos
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#cookies" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">4</span>
+                  Cookies, analítica y publicidad
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#compartimos" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">5</span>
+                  Con quién compartimos sus datos
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#transferencias" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">6</span>
+                  Transferencias y seguridad
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#derechos" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">7</span>
+                  Sus derechos y cómo ejercerlos
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#menores-contacto" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">8</span>
+                  Menores, cambios y contacto
+                </a>
+              </li>
+            </ol>
+          </nav>
+
+          <div class="focus-invert rounded-2xl bg-burgundy p-6 text-white shadow-sm print:hidden">
+            <h2 class="font-display text-xl font-semibold">¿Dudas sobre tus datos?</h2>
+            <p class="mt-2 text-sm leading-relaxed text-white/85">
+              Escríbenos y te ayudamos a consultar, corregir o eliminar tu información.
+            </p>
+            <a
+              href="https://wa.me/573005267555"
+              class="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-olive px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-background hover:text-olive"
+            >
+              Hablar por WhatsApp
+            </a>
+            <p class="mt-3 text-sm text-white/85">
+              <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="underline underline-offset-4 transition-colors duration-200 hover:text-white">
+                ecommerce.floristeriamedellin@gmail.com
+              </a>
+            </p>
+          </div>
+        </aside>
+
+        <div class="min-w-0">
+          {/* Resumen: 4 ideas clave para orientarse antes del documento completo */}
+          <section aria-label="Resumen de la política" class="grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-mint/40 text-olive">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="8" r="3.5" />
+                  <path d="M5 20a7 7 0 0 1 14 0" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Compra como invitado</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Sin cuentas ni contraseñas: solo tratamos los datos que escribes al pedir o contactarnos.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-beige/30 text-burgundy">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2.5 4 5.5v6c0 5 3.4 8.3 8 10 4.6-1.7 8-5 8-10v-6l-8-3Z" />
+                  <path d="m8.8 11.8 2.3 2.3 4.2-4.2" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Pagos con Bold</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Nunca recibimos ni guardamos el número completo de tu tarjeta ni su código de seguridad.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gold/25 text-wine">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M6 3h9l4 4v14H6V3Z" />
+                  <path d="M9 12h7M9 16h7M9 8h4" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Tus derechos</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Conocer, actualizar, rectificar y pedir la supresión de tus datos según la Ley 1581 de 2012.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-pink/20 text-wine">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 8h10M18 8h2M4 16h2M10 16h10" />
+                  <circle cx="16" cy="8" r="2.2" />
+                  <circle cx="8" cy="16" r="2.2" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Control de cookies</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Las de analítica y publicidad solo se usan si las aceptas; las necesarias mantienen tu carrito.
+              </p>
+            </article>
+          </section>
+
+          <article class="mt-8 space-y-6 leading-relaxed text-burgundy/90">
+            <section id="introduccion" aria-labelledby="introduccion-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">1</span>
+                <h2 id="introduccion-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Introducción y responsable del tratamiento
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  Esta política explica qué datos personales recopila Floristería Medellín cuando usted
+                  compra en nuestro sitio, cómo los usamos, cómo los protegemos, con quién los
+                  compartimos y cómo puede consultarlos, corregirlos o pedir que los eliminemos. Está
+                  vigente desde el 9 de octubre de 2026.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Floristería Medellín</strong>, con sitio web
+                  en floristeria-medellin.com («Floristería Medellín», «nosotros»), es la responsable del
+                  tratamiento de sus datos personales, de acuerdo con la Ley 1581 de 2012 y sus normas
+                  reglamentarias.
+                </p>
+                <p>
+                  Nuestro sitio <strong class="font-semibold text-burgundy">no tiene registro ni inicio de
+                  sesión</strong>: todas las compras se hacen como invitado. Por eso no creamos cuentas ni
+                  guardamos contraseñas; solo tratamos los datos que usted escribe al hacer un pedido, al
+                  contactarnos o al navegar.
+                </p>
+              </div>
+            </section>
+
+            <section id="datos" aria-labelledby="datos-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">2</span>
+                <h2 id="datos-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Datos que recopilamos
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>Usted decide qué información nos entrega. Recopilamos estos datos:</p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Al comprar como invitado</h3>
+                <ul class="list-disc space-y-2 pl-6 marker:text-wine">
+                  <li>
+                    <strong class="font-semibold text-burgundy">Datos de quien compra:</strong> nombre y
+                    apellido, correo electrónico, teléfono y, si lo requiere para facturar, documento de
+                    identidad y dirección.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Datos de la entrega:</strong> nombre y
+                    teléfono de la persona que recibe el pedido, dirección, barrio o municipio, fecha y
+                    franja de entrega e indicaciones para llegar.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Dedicatoria o tarjeta:</strong> el mensaje
+                    que desea enviar con las flores. Le pedimos no incluir datos sensibles ni de terceros
+                    que no sean necesarios.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Datos del pedido:</strong> productos, valor,
+                    estado del pago y de la entrega.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Datos de pago:</strong> el pago lo procesa
+                    directamente nuestra pasarela de pagos, Bold. Nosotros
+                    <strong class="font-semibold text-burgundy">no recibimos ni guardamos</strong> el número
+                    completo de su tarjeta ni su código de seguridad; solo la confirmación y el estado de la
+                    transacción.
+                  </li>
+                </ul>
+                <p>
+                  Si usted compra para otra persona, debe tener su autorización o un motivo legítimo para
+                  entregarnos sus datos de contacto, y nosotros los usaremos solo para realizar la entrega.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Cuando nos contacta</h3>
+                <p>
+                  Si nos escribe por el formulario, el chat, WhatsApp, correo o redes sociales, recopilamos
+                  su nombre, medio de contacto y el contenido del mensaje.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">De forma automática</h3>
+                <p>
+                  Al navegar recibimos datos de su navegador o dispositivo: dirección IP, proveedor de
+                  internet, tipo de navegador, sistema operativo, tipo de dispositivo, sitio desde el que
+                  llegó y el que visita al salir, páginas vistas, clics y tiempo de permanencia. También
+                  sabemos, de forma estadística, si abre nuestros correos mediante píxeles
+                  (<em>web beacons</em>). Usamos esta información para analizar tendencias y mejorar el sitio.
+                </p>
+                <p>
+                  No solicitamos datos sensibles (salud, origen étnico, creencias, opiniones políticas,
+                  biometría). Si usted los incluye en un mensaje o dedicatoria, es por su propia decisión y
+                  no los usamos para otro fin que el pedido.
+                </p>
+              </div>
+            </section>
+
+            <section id="finalidades" aria-labelledby="finalidades-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">3</span>
+                <h2 id="finalidades-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Para qué usamos sus datos
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>Usamos sus datos para:</p>
+                <ul class="list-disc space-y-2 pl-6 marker:text-wine">
+                  <li>
+                    <strong class="font-semibold text-burgundy">Gestionar su pedido:</strong> confirmarlo,
+                    cobrarlo, preparar el arreglo, coordinar la entrega y avisarle su estado.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Entregar a quien recibe:</strong> contactar
+                    al destinatario para coordinar la entrega y dejar la dedicatoria.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Facturar y cumplir obligaciones</strong>
+                    contables, tributarias y de garantía.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Atender solicitudes, cambios, reclamos y
+                    devoluciones.</strong>
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Prevenir fraudes</strong> y proteger el sitio
+                    y los pagos.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Mejorar el sitio y el servicio:</strong>
+                    analizar el uso, probar mejoras y entender qué productos interesan.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Enviarle información comercial,</strong>
+                    promociones y recordatorios de fechas especiales, solo si usted lo autoriza. Puede dejar
+                    de recibirlos cuando quiera.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Publicidad segmentada,</strong> mediante las
+                    cookies descritas en la sección 4, solo si usted las acepta.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Cumplir la ley</strong> y los requerimientos
+                    de autoridades, y defender nuestros derechos.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Crear estadísticas</strong> agregadas que no
+                    lo identifican.
+                  </li>
+                </ul>
+                <p>
+                  Si necesitamos usar sus datos para una finalidad distinta, le pediremos antes su
+                  autorización.
+                </p>
+              </div>
+            </section>
+
+            <section id="cookies" aria-labelledby="cookies-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">4</span>
+                <h2 id="cookies-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Cookies, analítica y publicidad
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  Nuestro sitio usa cookies: pequeños archivos de texto que se guardan en su dispositivo y
+                  lo identifican de forma única. Al aceptarlas, usted nos autoriza, y autoriza a los
+                  terceros con los que trabajamos, a guardarlas y leerlas. Puede rechazarlas desde su
+                  navegador, pero algunas funciones, como el carrito de compras, podrían dejar de funcionar.
+                </p>
+                <div class="overflow-x-auto rounded-xl border border-beige/50 shadow-sm">
+                  <table class="w-full min-w-[36rem] text-left text-sm">
+                    <caption class="sr-only">Tipos de cookies que usa el sitio</caption>
+                    <thead class="bg-burgundy text-white">
+                      <tr>
+                        <th scope="col" class="px-4 py-3 font-semibold">Tipo de cookie</th>
+                        <th scope="col" class="px-4 py-3 font-semibold">Para qué la usamos</th>
+                        <th scope="col" class="px-4 py-3 font-semibold">¿Requiere su aceptación?</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-beige/40 bg-white">
+                      <tr>
+                        <td class="px-4 py-3 font-medium text-burgundy">Estrictamente necesarias</td>
+                        <td class="px-4 py-3">Mostrar el sitio, mantener su carrito y completar el pago</td>
+                        <td class="px-4 py-3"><span class="inline-block rounded-full bg-mint/40 px-3 py-0.5 text-xs font-semibold text-olive">No</span></td>
+                      </tr>
+                      <tr>
+                        <td class="px-4 py-3 font-medium text-burgundy">De sesión</td>
+                        <td class="px-4 py-3">Recordar lo que agregó al carrito mientras navega; caducan al cerrar el navegador</td>
+                        <td class="px-4 py-3"><span class="inline-block rounded-full bg-mint/40 px-3 py-0.5 text-xs font-semibold text-olive">No</span></td>
+                      </tr>
+                      <tr>
+                        <td class="px-4 py-3 font-medium text-burgundy">De rendimiento y analítica</td>
+                        <td class="px-4 py-3">Medir páginas visitadas, fuentes de tráfico e intereses</td>
+                        <td class="px-4 py-3"><span class="inline-block rounded-full bg-gold px-3 py-0.5 text-xs font-semibold text-neutral-800">Sí</span></td>
+                      </tr>
+                      <tr>
+                        <td class="px-4 py-3 font-medium text-burgundy">De funcionalidad</td>
+                        <td class="px-4 py-3">Recordar sus preferencias, como la ciudad de entrega</td>
+                        <td class="px-4 py-3"><span class="inline-block rounded-full bg-gold px-3 py-0.5 text-xs font-semibold text-neutral-800">Sí</span></td>
+                      </tr>
+                      <tr>
+                        <td class="px-4 py-3 font-medium text-burgundy">De publicidad y segmentación</td>
+                        <td class="px-4 py-3">Mostrarle anuncios de nuestros productos en otros sitios</td>
+                        <td class="px-4 py-3"><span class="inline-block rounded-full bg-gold px-3 py-0.5 text-xs font-semibold text-neutral-800">Sí</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p>
+                  <strong class="font-semibold text-burgundy">Google Analytics.</strong> Usamos Google
+                  Analytics para medir el tráfico del sitio. Recopila datos como su dirección IP, páginas
+                  visitadas y sitio de procedencia, y no lo identifica por su nombre. No lo combinamos con
+                  los datos de sus pedidos. Puede impedirlo con el
+                  <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">complemento de inhabilitación</a>
+                  y conocer más en la
+                  <a href="https://policies.google.com/privacy/partners" rel="noopener" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">política de privacidad de Google</a>.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Publicidad dirigida de Google y Meta.</strong>
+                  Google y Meta (Facebook e Instagram) pueden usar cookies y píxeles para mostrarle nuestros
+                  anuncios después de visitar el sitio. Puede desactivar la personalización de anuncios de
+                  Google
+                  <a href="https://support.google.com/ads/answer/2662922" rel="noopener" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">aquí</a>,
+                  en la
+                  <a href="https://optout.networkadvertising.org/" rel="noopener" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">Network Advertising Initiative</a>
+                  o en la
+                  <a href="https://www.facebook.com/help/568137493302217" rel="noopener" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">configuración de anuncios de Meta</a>.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">No rastrear.</strong> Por ahora el sitio no
+                  responde a la señal «No rastrear» de los navegadores. Puede desactivar el seguimiento en
+                  la configuración de su navegador.
+                </p>
+              </div>
+            </section>
+
+            <section id="compartimos" aria-labelledby="compartimos-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">5</span>
+                <h2 id="compartimos-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Con quién compartimos sus datos
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>No vendemos ni alquilamos sus datos personales. Los compartimos solo en la medida necesaria con:</p>
+                <ul class="list-disc space-y-2 pl-6 marker:text-wine">
+                  <li>
+                    <strong class="font-semibold text-burgundy">Bold,</strong> nuestra pasarela de pagos, que
+                    procesa su pago bajo su propia política de privacidad.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Domiciliarios y empresas de mensajería,</strong>
+                    que reciben el nombre, teléfono y dirección de quien recibe el pedido para entregarlo.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Proveedores tecnológicos:</strong> hosting,
+                    correo electrónico, mensajería, chat, análisis web y soporte técnico.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Redes publicitarias,</strong> como Google y
+                    Meta, cuando usted acepta las cookies de publicidad.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Asesores profesionales:</strong> contadores,
+                    abogados y auditores.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Autoridades,</strong> cuando la ley, una orden
+                    judicial o una investigación lo exijan, o para proteger nuestros derechos, a nuestros
+                    clientes y al sitio.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Un comprador de la empresa,</strong> si
+                    Floristería Medellín se vende, se fusiona o entra en insolvencia. El nuevo responsable
+                    deberá respetar esta política y avisarle de cualquier cambio.
+                  </li>
+                </ul>
+                <p>
+                  Cuando usamos un proveedor que trata datos por nuestra cuenta, le exigimos que los proteja
+                  y los use solo para el servicio contratado. Podemos compartir estadísticas agregadas que no
+                  lo identifican.
+                </p>
+              </div>
+            </section>
+
+            <section id="transferencias" aria-labelledby="transferencias-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">6</span>
+                <h2 id="transferencias-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Transferencias internacionales, conservación y seguridad
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Transferencias internacionales</h3>
+                <p>
+                  Algunos de nuestros proveedores, como el hosting, la analítica y las redes publicitarias,
+                  pueden almacenar o procesar datos fuera de Colombia, por ejemplo en Estados Unidos. Cuando
+                  esto ocurre, buscamos que el destinatario ofrezca un nivel adecuado de protección y, si la
+                  ley lo exige, pedimos su autorización. Al aceptar esta política, usted autoriza esas
+                  transferencias. Si es usuario de la Unión Europea, la transferencia se apoya en su
+                  consentimiento o en la necesidad de ejecutar el contrato de compra.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Conservación</h3>
+                <p>
+                  Conservamos sus datos solo el tiempo necesario para cumplir las finalidades descritas y las
+                  obligaciones legales, contables y tributarias, y para atender garantías o reclamaciones.
+                  Después los eliminamos, anonimizamos o destruimos. Pueden estar en formato electrónico, en
+                  papel o en ambos.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Seguridad</h3>
+                <p>
+                  Usamos medidas de seguridad estándar de la industria para proteger sus datos, como conexión
+                  cifrada (HTTPS) en todo el sitio y acceso restringido a la información. El pago se hace en
+                  la plataforma de Bold, con cifrado, y no vemos los datos completos de su tarjeta. Aun así,
+                  ningún sistema en internet es totalmente seguro y no podemos garantizar que nunca haya
+                  pérdida o uso indebido de la información. Si ocurre un incidente que afecte sus datos, lo
+                  informaremos a usted y a la autoridad cuando la ley lo exija.
+                </p>
+              </div>
+            </section>
+
+            <section id="derechos" aria-labelledby="derechos-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">7</span>
+                <h2 id="derechos-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Sus derechos como titular y cómo ejercerlos
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  De acuerdo con la Ley 1581 de 2012 y el Decreto 1377 de 2013 (compilado en el Decreto 1074
+                  de 2015), usted tiene derecho a:
+                </p>
+                <ul class="list-disc space-y-2 pl-6 marker:text-wine">
+                  <li>
+                    <strong class="font-semibold text-burgundy">Conocer, actualizar y rectificar</strong> sus
+                    datos personales.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Pedir prueba de la autorización</strong> que
+                    nos dio, salvo los casos en que la ley no la exige.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Ser informado,</strong> si lo pide, sobre el
+                    uso que les damos a sus datos.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Revocar la autorización o pedir la
+                    supresión</strong> de sus datos cuando no se respeten los principios y garantías legales.
+                    No procede si debemos conservarlos por una obligación legal o contractual, como la
+                    facturación.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Acceder gratuitamente</strong> a sus datos.
+                  </li>
+                  <li>
+                    <strong class="font-semibold text-burgundy">Presentar quejas</strong> ante la
+                    Superintendencia de Industria y Comercio (SIC), una vez agotado el trámite ante nosotros.
+                  </li>
+                </ul>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Cómo presentar su solicitud</h3>
+                <p>
+                  Escriba a
+                  <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">ecommerce.floristeriamedellin@gmail.com</a>
+                  o a Cra. 39 #49-24, segundo piso, con su nombre completo, documento de identidad, el número
+                  de pedido si lo tiene, un medio de contacto y la descripción clara de lo que solicita. Si
+                  actúa en nombre de otra persona, adjunte la autorización o el poder. Podemos pedirle
+                  información adicional para verificar su identidad.
+                </p>
+                <p>
+                  Responderemos las consultas en máximo 10 días hábiles y los reclamos en máximo 15 días
+                  hábiles, prorrogables en los términos de la ley.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Correos comerciales.</strong> Puede dejar de
+                  recibirlos con el enlace de cancelación al final de cada correo o escribiéndonos. Los
+                  correos sobre su pedido seguirán llegando mientras haya una compra en curso.
+                </p>
+              </div>
+            </section>
+
+            <section id="menores-contacto" aria-labelledby="menores-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">8</span>
+                <h2 id="menores-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Menores, enlaces, cambios y contacto
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  <strong class="font-semibold text-burgundy">Menores de edad.</strong> El sitio no está
+                  diseñado para menores de 18 años y no recopilamos a sabiendas sus datos. Si usted es
+                  padre, madre o tutor y cree que un menor nos entregó datos, escríbanos y los eliminaremos
+                  en un plazo razonable; antes podemos pedir una prueba de identidad. No verificamos la edad
+                  de quienes compran.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Enlaces a otros sitios.</strong> Nuestro sitio
+                  puede enlazar a páginas de terceros que no controlamos y que tienen sus propias políticas.
+                  No somos responsables de ellas.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Cambios a esta política.</strong> Podemos
+                  modificarla en cualquier momento. Publicaremos la nueva versión en el sitio con su fecha
+                  de vigencia y, si cambia de forma importante el uso de sus datos, le avisaremos por
+                  correo cuando tengamos su dirección. Seguir usando el sitio después de un cambio implica
+                  que lo acepta.
+                </p>
+                <div class="rounded-2xl border border-beige/50 bg-background/60 p-6 sm:p-8">
+                  <h3 class="font-display text-xl font-semibold text-burgundy">Contacto</h3>
+                  <p class="mt-2">Para preguntas sobre esta política o para ejercer sus derechos:</p>
+                  <ul class="mt-4 space-y-2">
+                    <li>
+                      <strong class="font-semibold text-burgundy">Correo electrónico:</strong>
+                      <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">ecommerce.floristeriamedellin@gmail.com</a>
+                    </li>
+                    <li>
+                      <strong class="font-semibold text-burgundy">Dirección:</strong> Cra. 39 #49-24,
+                      segundo piso
+                    </li>
+                    <li>
+                      <strong class="font-semibold text-burgundy">Teléfono / WhatsApp:</strong>
+                      <a href="https://wa.me/573005267555" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">+57 300 526 7555</a>
+                    </li>
+                    <li>
+                      <strong class="font-semibold text-burgundy">Sitio web:</strong> floristeria-medellin.com
+                    </li>
+                  </ul>
+                  <div class="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href="mailto:ecommerce.floristeriamedellin@gmail.com"
+                      class="inline-flex min-h-11 items-center justify-center rounded-md bg-red-dark px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-wine"
+                    >
+                      Escribir un correo
+                    </a>
+                    <a
+                      href="https://wa.me/573005267555"
+                      class="inline-flex min-h-11 items-center justify-center rounded-md border-2 border-olive px-6 py-3 text-base font-semibold text-olive transition-colors duration-200 hover:bg-olive hover:text-white"
+                    >
+                      Hablar por WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <p class="mt-8 text-center">
+            <a href="#contenido" class="inline-flex min-h-11 items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 19V5m-7 7 7-7 7 7" />
+              </svg>
+              Volver arriba
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+    .toc-link[aria-current="true"] {
+      background-color: rgba(205, 157, 131, 0.25);
+      color: #7b323b;
+      font-weight: 600;
+    }
+  </style>
+
+  <script>
+    const printButton = document.getElementById("print-policy");
+    printButton?.addEventListener("click", () => window.print());
+
+    const tocLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-toc-link]"));
+    const tocSections = tocLinks
+      .map((link) => document.querySelector(link.getAttribute("href") ?? ""))
+      .filter((section): section is Element => section !== null);
+    const setActiveToc = (id: string) => {
+      tocLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${id}`) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+    if ("IntersectionObserver" in window && tocSections.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.target.id) setActiveToc(entry.target.id);
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px" }
+      );
+      tocSections.forEach((section) => observer.observe(section));
+    }
+  </script>
+</BaseLayout>

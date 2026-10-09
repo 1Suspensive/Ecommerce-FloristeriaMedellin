@@ -44,7 +44,9 @@ footer :focus-visible,
   outline-color: #ffffff;
 }
 
-/* Carrusel de testimonios: desplazamiento lento solo con transform (compositor), sin JS */
+/* Carrusel de testimonios: sin JS lo mueve la animación CSS (2 copias, loop en -50%);
+   con JS (.is-js) el script recicla una sola copia en el DOM para un loop infinito
+   real en ambas direcciones, con arrastre (ratón y táctil) e inercia. */
 @keyframes marquee-x {
   to {
     transform: translateX(-50%);
@@ -53,8 +55,33 @@ footer :focus-visible,
 
 .marquee {
   overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
   mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.marquee.is-js .marquee-track {
+  animation: none;
+  will-change: transform;
+}
+
+.testi-nav {
+  display: none;
+}
+
+.testi-nav.is-live {
+  display: flex;
+}
+
+.marquee.is-dragging {
+  cursor: grabbing;
+}
+
+.marquee.is-dragging,
+.marquee.is-dragging * {
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .marquee-track {

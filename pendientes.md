@@ -13,11 +13,18 @@ Tareas identificadas durante la Fase 1 que requieren datos reales o decisiones d
 
 - [x] Nombre definitivo de la floristería: confirmado "Floristería Medellín" (header, footer y metadatos).
 - [x] Número de WhatsApp real aplicado: `+57 300 526 7555` en hero, CTA final, footer, 404 y botón flotante.
-- [ ] Correo de contacto real (placeholder `hola@tufloristeria.co` en footer).
+- [ ] Correo de contacto real (placeholder `hola@tufloristeria.co` en footer). Nota: los documentos legales (`/privacidad`, `/terminos`) usan `ecommerce.floristeriamedellin@gmail.com`; confirmar si ese es el oficial y actualizar el footer.
 - [x] Teléfono en el JSON-LD `Florist` de `BaseLayout.astro`: `+573005267555`, más `streetAddress`, `url` y `openingHoursSpecification` reales.
 - [x] Horario y dirección física reales en el footer: Cra. 39 #49-24, segundo piso · Lunes a viernes 8:00 a. m. – 7:00 p. m. · Sábados y domingos 9:00 a. m. – 2:00 p. m.
 - [ ] Hora límite real para envíos el mismo día (se asumió 3:00 p. m.).
 - [ ] Productos, categorías, precios y testimonios reales (los de `src/lib/catalog.ts` son inventados).
+
+## Datos legales pendientes (términos y condiciones)
+
+- [ ] NIT o identificación fiscal de Floristería Medellín (sección 1 de `docs/terms-and-conditions.md`, omitido por ahora).
+- [ ] Plazo exacto en horas para cancelar o cambiar un pedido antes de la preparación (sección 6; el documento dice "antes de que el arreglo entre en preparación").
+- [ ] Cobertura exacta: municipios del Valle de Aburrá con reparto propio, zonas con costo adicional y tiempos/costos de envíos nacionales (sección 5).
+- [ ] Revisión jurídica de `docs/terms-and-conditions.md` y `docs/privacy-policy.md` por un abogado antes de publicar (AGENTS.md: revisión humana en temas legales/pagos).
 
 ## Assets
 

@@ -1,0 +1,639 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Términos y condiciones | Floristería en Medellín"
+  description="Reglas de compra en Floristería Medellín: productos y precios en COP, pagos con Bold, entregas en Medellín y el Valle de Aburrá, cambios, garantía y contacto."
+>
+  <main id="contenido">
+    {/* Hero: mismo patrón de privacidad.astro y contacto.astro. Mejora visual
+        guiada por la skill ui-ux-pro-max (patrón FAQ/Documentation, estilo
+        minimalista): jerarquía clara, tarjetas y navegación lateral fija. */}
+    <section aria-labelledby="terminos-titulo" class="relative overflow-hidden border-b border-beige/50 bg-white/60">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+        <div class="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-pink/15 blur-3xl"></div>
+        <div class="absolute -right-24 top-10 h-72 w-72 rounded-full bg-mint/25 blur-3xl"></div>
+      </div>
+      <div class="relative mx-auto max-w-3xl px-4 py-12 text-center sm:px-6 lg:py-16">
+        <nav aria-label="Miga de pan">
+          <ol class="flex items-center justify-center gap-2 text-sm text-burgundy/70">
+            <li>
+              <a href="/" class="underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">
+                Inicio
+              </a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" class="font-medium text-burgundy">Términos y condiciones</li>
+          </ol>
+        </nav>
+
+        <svg viewBox="0 0 100 100" class="mx-auto mt-8 h-12 w-12" aria-hidden="true" focusable="false">
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(60 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990" transform="rotate(120 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(180 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#d87990" transform="rotate(240 50 50)"></ellipse>
+          <ellipse cx="50" cy="29" rx="11" ry="20" fill="#fe5556" transform="rotate(300 50 50)"></ellipse>
+          <circle cx="50" cy="50" r="12" fill="#f6a908"></circle>
+          <circle cx="50" cy="50" r="6" fill="#8b0915"></circle>
+        </svg>
+
+        <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-wine">Legal</p>
+        <h1 id="terminos-titulo" class="mt-3 font-display text-4xl font-semibold leading-tight text-burgundy sm:text-5xl">
+          Términos y condiciones
+        </h1>
+        <p class="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-burgundy/80">
+          Las reglas de tu compra: productos, precios, pagos, entregas,
+          cambios, garantía y cómo contactarnos.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <p class="inline-block rounded-full bg-mint/40 px-4 py-1 text-sm font-semibold text-olive">
+            Vigente desde el 9 de octubre de 2026
+          </p>
+          <p class="inline-block rounded-full bg-gold px-4 py-1 text-sm font-semibold text-neutral-800">
+            Ley 1480 de 2011
+          </p>
+          <button
+            id="print-terms"
+            type="button"
+            class="inline-flex min-h-11 items-center gap-2 rounded-full border-2 border-burgundy/20 px-4 py-1 text-sm font-semibold text-burgundy transition-colors duration-200 hover:border-burgundy/40 hover:bg-white print:hidden"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M6 9V3h12v6" />
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+              <rect x="6" y="14" width="12" height="7" />
+            </svg>
+            Imprimir
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+      <div class="grid gap-10 lg:grid-cols-[17.5rem_minmax(0,1fr)]">
+        {/* Índice lateral fijo en escritorio, tarjeta superior en móvil */}
+        <aside class="self-start space-y-6 lg:sticky lg:top-24">
+          <nav aria-label="Índice de los términos" class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm sm:p-6">
+            <h2 class="font-display text-xl font-semibold text-burgundy">Contenido</h2>
+            <p class="mt-1 text-sm text-burgundy/70">Documento completo en 8 secciones.</p>
+            <ol class="mt-4 grid gap-1 sm:grid-cols-2 lg:grid-cols-1">
+              <li>
+                <a data-toc-link href="#aceptacion" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">1</span>
+                  Aceptación e identificación
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#uso" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">2</span>
+                  Uso del sitio y propiedad
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#productos" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">3</span>
+                  Productos, precios y disponibilidad
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#compra" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">4</span>
+                  Proceso de compra y pagos
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#entregas" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">5</span>
+                  Entregas
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#cancelaciones" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">6</span>
+                  Cancelaciones y garantía
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#responsabilidad" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">7</span>
+                  Responsabilidad y fuerza mayor
+                </a>
+              </li>
+              <li>
+                <a data-toc-link href="#datos-contacto" class="toc-link flex min-h-11 items-center gap-3 rounded-lg px-3 py-2 text-[0.95rem] text-burgundy/80 transition-colors duration-200 hover:bg-beige/30 hover:text-burgundy">
+                  <span aria-hidden="true" class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-beige/30 font-display text-sm font-semibold text-burgundy">8</span>
+                  Datos, ley aplicable y contacto
+                </a>
+              </li>
+            </ol>
+          </nav>
+
+          <div class="focus-invert rounded-2xl bg-burgundy p-6 text-white shadow-sm print:hidden">
+            <h2 class="font-display text-xl font-semibold">¿Dudas con tu pedido?</h2>
+            <p class="mt-2 text-sm leading-relaxed text-white/85">
+              Escríbenos con tu número de pedido y te ayudamos con cambios, entregas o reclamos.
+            </p>
+            <a
+              href="https://wa.me/573005267555"
+              class="mt-4 inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-olive px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-background hover:text-olive"
+            >
+              Hablar por WhatsApp
+            </a>
+            <p class="mt-3 text-sm text-white/85">
+              <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="underline underline-offset-4 transition-colors duration-200 hover:text-white">
+                ecommerce.floristeriamedellin@gmail.com
+              </a>
+            </p>
+          </div>
+        </aside>
+
+        <div class="min-w-0">
+          {/* Resumen: 4 ideas clave para orientarse antes del documento completo */}
+          <section aria-label="Resumen de los términos" class="grid gap-4 sm:grid-cols-2">
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-mint/40 text-olive">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="9" cy="20" r="1.6" />
+                  <circle cx="17" cy="20" r="1.6" />
+                  <path d="M2.5 3.5h2.2l2.4 12a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2l1.6-8H6" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Compra como invitado</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Sin cuentas ni contraseñas: guarda tu correo de confirmación y número de pedido.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-beige/30 text-burgundy">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2.5" y="5.5" width="19" height="13" rx="2" />
+                  <path d="M2.5 10h19M6.5 15h4" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Pagos con Bold</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Tarjetas y PSE en COP. El pedido se prepara cuando el pago es aprobado.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-gold/25 text-wine">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M1.5 8a1 1 0 0 1 1-1h11a1 1 0 0 1 1 1v8.5h-13V8Z" />
+                  <path d="M14.5 10.5h4l3 3v3h-7" />
+                  <circle cx="6" cy="18.5" r="1.8" />
+                  <circle cx="17.5" cy="18.5" r="1.8" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Entregas el mismo día</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Pide antes de las 3:00 p. m. en Medellín y el Valle de Aburrá, con envíos nacionales.
+              </p>
+            </article>
+            <article class="rounded-2xl border border-beige/50 bg-white p-5 shadow-sm">
+              <span class="flex h-11 w-11 items-center justify-center rounded-full bg-pink/20 text-wine">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 2.5 4 5.5v6c0 5 3.4 8.3 8 10 4.6-1.7 8-5 8-10v-6l-8-3Z" />
+                  <path d="m8.8 11.8 2.3 2.3 4.2-4.2" />
+                </svg>
+              </span>
+              <h2 class="mt-3 font-display text-lg font-semibold text-burgundy">Cambios y garantía</h2>
+              <p class="mt-1 text-sm leading-relaxed text-burgundy/80">
+                Cambios antes de la preparación y reclamos de calidad dentro de las 24 horas.
+              </p>
+            </article>
+          </section>
+
+          <article class="mt-8 space-y-6 leading-relaxed text-burgundy/90">
+            <section id="aceptacion" aria-labelledby="aceptacion-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">1</span>
+                <h2 id="aceptacion-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Aceptación de los términos e identificación del vendedor
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  Estos Términos y Condiciones regulan el uso del sitio
+                  <strong class="font-semibold text-burgundy">floristeria-medellin.com</strong> y las compras
+                  que usted realiza en él. Al navegar, hacer un pedido o aceptar estos términos, usted declara
+                  que los leyó, los entiende y los acepta. Si no está de acuerdo, le pedimos no usar el sitio
+                  ni comprar en él.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Quién le vende.</strong> El sitio es operado por
+                  <strong class="font-semibold text-burgundy">Floristería Medellín</strong>, con domicilio en
+                  Cra. 39 #49-24, segundo piso, Medellín, Antioquia, Colombia. Puede escribirnos a
+                  <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">ecommerce.floristeriamedellin@gmail.com</a>,
+                  o llamarnos o escribirnos por WhatsApp al
+                  <a href="https://wa.me/573005267555" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">+57 300 526 7555</a>.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Quién puede comprar.</strong> Debe ser mayor de
+                  18 años y tener capacidad legal para contratar. Al comprar, usted declara que los datos que
+                  entrega son veraces y completos.
+                </p>
+                <p>
+                  En estos términos, «usted» o «comprador» es quien hace el pedido; «destinatario» es la
+                  persona que recibe las flores o el producto.
+                </p>
+              </div>
+            </section>
+
+            <section id="uso" aria-labelledby="uso-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">2</span>
+                <h2 id="uso-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Uso del sitio y propiedad intelectual
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Uso permitido</h3>
+                <p>Puede usar el sitio para consultar el catálogo y comprar para uso personal o como obsequio. No está permitido:</p>
+                <ul class="list-disc space-y-2 pl-6 marker:text-wine">
+                  <li>usar el sitio de forma ilegal, fraudulenta o para suplantar a otra persona;</li>
+                  <li>intentar acceder sin autorización a nuestros sistemas, interferir con su funcionamiento o introducir virus o código malicioso;</li>
+                  <li>copiar o extraer masivamente el contenido del sitio mediante robots o <em>scraping</em>;</li>
+                  <li>revender nuestros productos o servicios sin autorización escrita.</li>
+                </ul>
+                <p>Si incumple estas reglas podemos cancelar sus pedidos y bloquear su acceso al sitio.</p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Propiedad intelectual</h3>
+                <p>
+                  Las marcas, el nombre y el logotipo de Floristería Medellín, los textos, las fotografías,
+                  los diseños de arreglos, el código y el diseño del sitio son de nuestra propiedad y están
+                  protegidos por las normas de propiedad intelectual de Colombia. No puede copiarlos,
+                  modificarlos, distribuirlos ni usarlos con fines comerciales sin nuestra autorización previa
+                  y por escrito.
+                </p>
+                <p>
+                  Si usted nos envía textos, imágenes u otro contenido para personalizar un pedido, declara que
+                  tiene derecho a usarlos y nos autoriza a utilizarlos solo para preparar y entregar ese pedido.
+                </p>
+              </div>
+            </section>
+
+            <section id="productos" aria-labelledby="productos-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">3</span>
+                <h2 id="productos-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Productos, precios y disponibilidad
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  <strong class="font-semibold text-burgundy">Productos naturales.</strong> Las flores son
+                  productos naturales. Su color, tamaño, forma y apertura pueden variar levemente según la
+                  temporada y el proveedor. Las fotografías del sitio son de referencia y el arreglo que reciba
+                  puede diferir en detalles menores.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Sustituciones.</strong> Si alguna flor, follaje,
+                  florero o accesorio no está disponible el día de la entrega, podemos reemplazarlo por otro de
+                  igual o mayor valor, y de estilo y colores similares, para conservar la apariencia del diseño.
+                  Si prefiere que no hagamos sustituciones, indíquelo en las observaciones del pedido y le
+                  propondremos alternativas antes de despachar.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Precios.</strong> Todos los precios están en
+                  pesos colombianos (COP) e incluyen IVA cuando aplica. El costo del domicilio se muestra por
+                  separado antes de pagar. El precio válido es el que aparece al confirmar su pedido. Si
+                  detectamos un error evidente de precio, le informaremos antes de despachar y podrá confirmar
+                  el pedido con el valor correcto o cancelarlo con reembolso total.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Disponibilidad.</strong> Los productos se ofrecen
+                  hasta agotar existencias. En fechas de alta demanda, como San Valentín, Día de la Madre y
+                  diciembre, podemos limitar la cantidad de pedidos por franja de entrega o pedir mayor
+                  anticipación.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Productos adicionales.</strong> Los globos,
+                  chocolates, peluches, vinos y otros complementos son de las marcas y presentaciones que se
+                  muestran en el sitio o equivalentes, y pueden cambiar según existencias.
+                </p>
+              </div>
+            </section>
+
+            <section id="compra" aria-labelledby="compra-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">4</span>
+                <h2 id="compra-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Proceso de compra y pagos
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Compra como invitado</h3>
+                <p>
+                  El sitio no tiene registro ni inicio de sesión. Para comprar, usted agrega productos al
+                  carrito, ingresa sus datos y los del destinatario, elige la fecha y franja de entrega, y
+                  paga. Como no hay cuenta,
+                  <strong class="font-semibold text-burgundy">guarde el correo de confirmación y el número de
+                  pedido</strong>: son su comprobante y los necesitará para cualquier consulta, cambio o reclamo.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Confirmación del pedido</h3>
+                <p>
+                  El contrato de compraventa se perfecciona cuando su pago es aprobado y le enviamos el correo
+                  de confirmación con el número de pedido. Antes de pagar, revise con cuidado el producto, la
+                  dirección, el teléfono del destinatario y la fecha de entrega. Podemos rechazar o cancelar un
+                  pedido si los datos son incompletos, si hay sospecha de fraude o si no podemos entregar en la
+                  zona o la fecha elegida; en ese caso le devolvemos el dinero.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Medios de pago</h3>
+                <p>
+                  Los pagos se procesan a través de <strong class="font-semibold text-burgundy">Bold</strong>,
+                  plataforma de pagos que ofrece tarjetas de crédito y débito, PSE y los demás medios que se
+                  muestren al pagar. Nosotros no recibimos ni almacenamos los datos completos de su tarjeta; esa
+                  información la maneja Bold bajo sus propios términos y políticas de seguridad.
+                </p>
+                <ul class="list-disc space-y-2 pl-6 marker:text-wine">
+                  <li>El cobro se hace en pesos colombianos (COP).</li>
+                  <li>El pedido se prepara una vez el pago sea aprobado. Si el pago queda pendiente o es rechazado, no se despacha.</li>
+                  <li>Su banco o entidad financiera puede cobrar costos propios por la transacción, que no controlamos.</li>
+                  <li>Si le llega un cobro no reconocido o duplicado, escríbanos con su número de pedido para revisarlo.</li>
+                </ul>
+              </div>
+            </section>
+
+            <section id="entregas" aria-labelledby="entregas-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">5</span>
+                <h2 id="entregas-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Entregas
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  <strong class="font-semibold text-burgundy">Cobertura.</strong> Entregamos en Medellín y el
+                  Valle de Aburrá, con envíos a nivel nacional. En el sitio verá si su zona tiene cobertura y
+                  el costo del domicilio antes de pagar.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Fecha y franja de entrega.</strong> Usted elige
+                  la fecha y una franja horaria. Hacemos nuestro mejor esfuerzo para entregar dentro de ella,
+                  pero la hora exacta no está garantizada, salvo que contratemos con usted una hora específica
+                  y así se confirme por escrito. En fechas de alta demanda, el tráfico y el volumen de pedidos
+                  pueden afectar los tiempos.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Datos de entrega.</strong> Usted es responsable
+                  de que la dirección, las indicaciones y el teléfono del destinatario sean correctos y estén
+                  completos. Para entregas en conjuntos residenciales, oficinas, hospitales, clínicas o
+                  funerarias, indique el nombre y la persona que recibe, porque la portería puede exigirlo.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Sorpresas.</strong> Si la entrega es una
+                  sorpresa, no podemos garantizar que el destinatario esté presente. Contactaremos al
+                  destinatario o al comprador para coordinar.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Destinatario ausente o dirección
+                  errónea.</strong> Si no logramos entregar porque el destinatario no está, no contesta, la
+                  portería rechaza el pedido o la dirección es errónea, intentaremos contactar al comprador y
+                  al destinatario. Si no es posible entregar en la misma jornada, podremos reprogramar la
+                  entrega o dejar el pedido en portería o con un tercero, y se considerará entregado. Una nueva
+                  entrega o un cambio de dirección puede tener un costo adicional de domicilio.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Recepción.</strong> Al recibir el pedido, revise
+                  el estado del arreglo. Si observa algún problema, repórtelo de inmediato según la sección 6.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Entregas fuera de Medellín y el Valle de
+                  Aburrá.</strong> Los pedidos con destino fuera de nuestra zona de reparto propio se envían a
+                  nivel nacional; el tiempo estimado y el costo del envío se muestran antes de pagar.
+                </p>
+              </div>
+            </section>
+
+            <section id="cancelaciones" aria-labelledby="cancelaciones-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">6</span>
+                <h2 id="cancelaciones-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Cancelaciones, cambios, retracto y garantía
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  Esta sección se aplica sin perjuicio de los derechos que le reconoce el Estatuto del
+                  Consumidor (Ley 1480 de 2011).
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Cancelaciones y cambios antes del despacho</h3>
+                <p>
+                  Puede cancelar su pedido o cambiar la fecha, la dirección o el mensaje de la tarjeta
+                  <strong class="font-semibold text-burgundy">antes de que el arreglo entre en
+                  preparación</strong>, escribiendo a
+                  <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">ecommerce.floristeriamedellin@gmail.com</a>
+                  o por WhatsApp al
+                  <a href="https://wa.me/573005267555" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">+57 300 526 7555</a>
+                  con su número de pedido. Si cancela antes de ese momento, le devolvemos el valor pagado. Una
+                  vez el arreglo está en preparación o en ruta, no podemos cancelar ni reembolsar, porque los
+                  productos naturales son perecederos y se elaboran a pedido.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Derecho de retracto</h3>
+                <p>
+                  La ley le permite retractarse de compras a distancia dentro de los 5 días hábiles siguientes
+                  a la entrega. Sin embargo, la ley excluye de este derecho los bienes perecederos, los que por
+                  su naturaleza no pueden devolverse o se deterioran con rapidez, y los productos personalizados
+                  o elaborados a pedido. Por eso <strong class="font-semibold text-burgundy">no aplica el
+                  retracto</strong> a flores, arreglos y demás productos naturales o personalizados. Para los
+                  productos no perecederos, como peluches o accesorios sin personalizar, puede ejercer el
+                  retracto devolviéndolos sin uso y en su empaque original, y le reembolsaremos el valor pagado,
+                  descontando el costo del domicilio de devolución, dentro de los 30 días siguientes.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Garantía y reclamos por calidad</h3>
+                <p>
+                  Usted tiene derecho a recibir productos de la calidad e idoneidad ofrecidas. Si el pedido
+                  llega en mal estado, incompleto, con productos distintos de los pedidos, o con diferencias
+                  importantes frente a lo ofrecido, haga su reclamo
+                  <strong class="font-semibold text-burgundy">dentro de las 24 horas siguientes a la
+                  entrega</strong>, escribiendo a
+                  <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">ecommerce.floristeriamedellin@gmail.com</a>
+                  o por WhatsApp al
+                  <a href="https://wa.me/573005267555" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">+57 300 526 7555</a>,
+                  con su número de pedido y fotografías del arreglo y del empaque. Dado que son productos vivos,
+                  los reclamos posteriores no podrán verificarse.
+                </p>
+                <p>
+                  Si el reclamo procede, según el caso, repondremos el arreglo, haremos un nuevo envío o
+                  devolveremos el valor pagado. No cubre la garantía el deterioro por falta de cuidado después
+                  de la entrega, como no poner las flores en agua, exponerlas al sol o al calor, o no seguir las
+                  instrucciones de cuidado.
+                </p>
+                <h3 class="pt-2 font-display text-xl font-semibold text-burgundy">Reembolsos</h3>
+                <p>
+                  Los reembolsos se hacen por el mismo medio de pago, a través de Bold. El tiempo en que se
+                  refleje el dinero depende de su banco o entidad financiera. Lo haremos en un plazo máximo de
+                  30 días desde que se apruebe la devolución.
+                </p>
+              </div>
+            </section>
+
+            <section id="responsabilidad" aria-labelledby="responsabilidad-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">7</span>
+                <h2 id="responsabilidad-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Responsabilidad y fuerza mayor
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  <strong class="font-semibold text-burgundy">Nuestra responsabilidad.</strong> Respondemos por
+                  la calidad e idoneidad de nuestros productos y por el cumplimiento de la entrega en los
+                  términos de estas condiciones y de la ley. Nuestra responsabilidad máxima frente a un pedido
+                  se limita al valor pagado por él, salvo los casos en que la ley no permita esa limitación.
+                </p>
+                <p><strong class="font-semibold text-burgundy">Lo que no cubrimos.</strong> No somos responsables por:</p>
+                <ul class="list-disc space-y-2 pl-6 marker:text-wine">
+                  <li>retrasos o fallas causados por datos de entrega errados o incompletos, o por la ausencia o negativa del destinatario o de la portería a recibir;</li>
+                  <li>alergias o reacciones del destinatario a flores o aromas, salvo que usted nos haya informado de ellas al pedir;</li>
+                  <li>el uso que el destinatario o terceros den al producto después de la entrega;</li>
+                  <li>fallas del sitio por causas ajenas a nosotros, como caídas del servicio de internet, de hosting o de la pasarela de pagos, aunque haremos lo posible por resolverlas con rapidez.</li>
+                </ul>
+                <p>
+                  <strong class="font-semibold text-burgundy">Fuerza mayor o caso fortuito.</strong> No seremos
+                  responsables por incumplimientos o demoras causados por hechos fuera de nuestro control, como
+                  desastres naturales, lluvias fuertes, paros, bloqueos o cierres viales, restricciones de
+                  movilidad, orden público, fallas generales de servicios públicos o de telecomunicaciones, o
+                  escasez de flores por causa climática o de los proveedores. En esos casos le informaremos y,
+                  según corresponda, reprogramaremos la entrega, sustituiremos el producto o devolveremos el
+                  valor pagado.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Contenido de terceros y enlaces.</strong> El
+                  sitio puede enlazar a páginas de terceros. No controlamos su contenido ni respondemos por él.
+                </p>
+              </div>
+            </section>
+
+            <section id="datos-contacto" aria-labelledby="datos-titulo" class="scroll-mt-28 rounded-2xl border border-beige/50 bg-white p-6 shadow-sm sm:p-8">
+              <div class="flex items-start gap-4">
+                <span aria-hidden="true" class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-burgundy font-display text-lg font-semibold text-white">8</span>
+                <h2 id="datos-titulo" class="pt-1 font-display text-2xl font-semibold text-burgundy sm:text-3xl">
+                  Datos personales, modificaciones, ley aplicable y contacto
+                </h2>
+              </div>
+              <div class="mt-5 space-y-4">
+                <p>
+                  <strong class="font-semibold text-burgundy">Datos personales.</strong> Tratamos sus datos y
+                  los del destinatario conforme a nuestra
+                  <a href="/privacidad" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">Política de Privacidad</a>,
+                  que hace parte de estos términos.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Comunicaciones electrónicas.</strong> Usted
+                  acepta recibir por correo, WhatsApp o teléfono las comunicaciones necesarias sobre su pedido,
+                  que tienen validez como notificaciones. Los mensajes comerciales solo los enviamos si usted
+                  los autoriza.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Modificaciones.</strong> Podemos actualizar estos
+                  términos. La versión vigente es la publicada en el sitio y se aplica a los pedidos hechos
+                  desde su fecha de publicación; los pedidos anteriores se rigen por los términos vigentes
+                  cuando se hicieron.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Ley aplicable y jurisdicción.</strong> Estos
+                  términos se rigen por las leyes de la República de Colombia, en especial la Ley 1480 de 2011
+                  (Estatuto del Consumidor) y la Ley 527 de 1999 (comercio electrónico). Cualquier controversia
+                  se resolverá ante las autoridades competentes en Colombia. Usted también puede acudir a la
+                  Superintendencia de Industria y Comercio (SIC) como autoridad de protección al consumidor.
+                </p>
+                <p>
+                  <strong class="font-semibold text-burgundy">Peticiones, quejas y reclamos (PQR).</strong>
+                  Antes de acudir a una autoridad, le pedimos escribirnos para resolver su caso. Responderemos
+                  dentro de los plazos de ley.
+                </p>
+                <div class="rounded-2xl border border-beige/50 bg-background/60 p-6 sm:p-8">
+                  <h3 class="font-display text-xl font-semibold text-burgundy">Contacto</h3>
+                  <ul class="mt-4 space-y-2">
+                    <li>
+                      <strong class="font-semibold text-burgundy">Correo electrónico:</strong>
+                      <a href="mailto:ecommerce.floristeriamedellin@gmail.com" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">ecommerce.floristeriamedellin@gmail.com</a>
+                    </li>
+                    <li>
+                      <strong class="font-semibold text-burgundy">Teléfono / WhatsApp:</strong>
+                      <a href="https://wa.me/573005267555" class="text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">+57 300 526 7555</a>
+                    </li>
+                    <li>
+                      <strong class="font-semibold text-burgundy">Dirección:</strong> Cra. 39 #49-24,
+                      segundo piso, Medellín, Antioquia
+                    </li>
+                    <li>
+                      <strong class="font-semibold text-burgundy">Sitio web:</strong> floristeria-medellin.com
+                    </li>
+                  </ul>
+                  <div class="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href="mailto:ecommerce.floristeriamedellin@gmail.com"
+                      class="inline-flex min-h-11 items-center justify-center rounded-md bg-red-dark px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors duration-200 hover:bg-wine"
+                    >
+                      Escribir un correo
+                    </a>
+                    <a
+                      href="https://wa.me/573005267555"
+                      class="inline-flex min-h-11 items-center justify-center rounded-md border-2 border-olive px-6 py-3 text-base font-semibold text-olive transition-colors duration-200 hover:bg-olive hover:text-white"
+                    >
+                      Hablar por WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <p class="mt-8 text-center">
+            <a href="#contenido" class="inline-flex min-h-11 items-center gap-2 rounded-md px-4 py-2 text-sm font-semibold text-wine underline-offset-4 transition-colors duration-200 hover:text-burgundy hover:underline">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 19V5m-7 7 7-7 7 7" />
+              </svg>
+              Volver arriba
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    @media (prefers-reduced-motion: no-preference) {
+      html {
+        scroll-behavior: smooth;
+      }
+    }
+    .toc-link[aria-current="true"] {
+      background-color: rgba(205, 157, 131, 0.25);
+      color: #7b323b;
+      font-weight: 600;
+    }
+  </style>
+
+  <script>
+    const printButton = document.getElementById("print-terms");
+    printButton?.addEventListener("click", () => window.print());
+
+    const tocLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-toc-link]"));
+    const tocSections = tocLinks
+      .map((link) => document.querySelector(link.getAttribute("href") ?? ""))
+      .filter((section): section is Element => section !== null);
+    const setActiveToc = (id: string) => {
+      tocLinks.forEach((link) => {
+        if (link.getAttribute("href") === `#${id}`) {
+          link.setAttribute("aria-current", "true");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
+    };
+    if ("IntersectionObserver" in window && tocSections.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.target.id) setActiveToc(entry.target.id);
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px" }
+      );
+      tocSections.forEach((section) => observer.observe(section));
+    }
+  </script>
+</BaseLayout>
