@@ -5,8 +5,8 @@ Tareas identificadas durante la Fase 1 que requieren datos reales o decisiones d
 ## Entorno de desarrollo (importante)
 
 - [ ] **`NODE_ENV=production` está definido en el entorno de esta máquina.** Eso hace que `npm install`/`npm ci` omitan las devDependencies silenciosamente y rompan el proyecto (ya pasó una vez: faltaban tailwindcss, typescript, @astrojs/check, etc.). Quitar esa variable de entorno del sistema, o instalar siempre con `npm install --include=dev`.
-- [ ] Actualizar Node a ≥ 22.19 (warning `EBADENGINE` de `undici`; hoy hay 22.17.0).
-- [ ] Configurar lint y framework de pruebas (AGENTS.md §11 los exige; imprescindible antes de la Fase 3 de pagos).
+- [x] Actualizar Node de la máquina a 24.21.0 LTS (el proyecto ya exige `>=24.0.0` con `.nvmrc`; hoy la máquina tiene 22.17.0: instalar manualmente desde nodejs.org).
+- [x] Configurar lint y framework de pruebas (ESLint 10 + typescript-eslint + eslint-plugin-astro, Vitest 5, scripts `lint`/`test`, `tests/format.test.ts`; lint, check, test y build en verde).
 - [ ] Revisión visual con navegador del header entre 768–900px (posible saturación con 6 ítems + logo).
 
 ## Datos reales del negocio

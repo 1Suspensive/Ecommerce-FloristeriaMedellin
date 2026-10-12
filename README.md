@@ -4,7 +4,7 @@ Tienda online de una floristería en Medellín, Colombia, con envíos en el Vall
 
 ## Requisitos
 
-- Node.js `>= 22.12.0`
+- Node.js `>= 24.0.0` (LTS)
 - npm
 - Acceso a una base de datos MySQL compatible con Drizzle
 - Llaves de pruebas de Bold para pagos en desarrollo
