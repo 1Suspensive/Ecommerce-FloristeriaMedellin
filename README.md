@@ -50,13 +50,17 @@ No uses el prefijo `PUBLIC_` para secretos. Usa llaves de pruebas fuera de produ
 |---|---|
 | `npm run dev` | Desarrollo local. |
 | `npm run check` | Verificación de tipos. |
+| `npm run lint` | Lint (ESLint). |
+| `npm run test` | Pruebas (Vitest). |
 | `npm run build` | Build de producción. |
 | `npm run preview` | Previsualizar el build generado. |
 
-Antes de entregar, ejecuta tipos y build:
+Antes de entregar, ejecuta lint, tipos, pruebas y build:
 
 ```bash
+npm run lint
 npm run check
+npm run test
 npm run build
 ```
 
