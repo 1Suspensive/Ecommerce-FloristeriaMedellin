@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.tufloristeria.co/sitemap-index.xml
+Disallow: /api/
+Disallow: /carrito
+Disallow: /checkout
+Disallow: /cuenta
+Disallow: /admin
+Disallow: /pago/
+Disallow: /pedido/
+
+Sitemap: https://www.floristeria-medellin.com/sitemap-index.xml
